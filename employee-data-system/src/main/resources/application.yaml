@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: employee-data-system
+  flyway:
+    baseline-on-migrate: true
+    fail-on-missing-locations: false
+  datasource:
+    password: ${DB_PASSWORD}
+    username: ${USER_NAME}
+    url: jdbc:postgresql://localhost:5432/employee-data-system
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      format_sql: true
+jwt:
+  secret-code: ${SECRET_KEY}
+  life-time: ${LIFE_TIME}
